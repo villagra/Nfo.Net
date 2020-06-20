@@ -10,7 +10,7 @@ namespace Nfo.Net
 {
     public class NfoReader
     {
-        public IMedia Read(String content, ILogger logger = null)
+        public IMediaMetadata Read(String content, ILogger logger = null)
         {
             logger = logger ?? NullLogger.Instance;
             content = content.Trim('\r', '\n');

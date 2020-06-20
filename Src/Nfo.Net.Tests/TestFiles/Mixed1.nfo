@@ -1,0 +1,10 @@
+﻿ <movie>
+    <title>Star Wars (99 second cut)</title>
+    <runtime>2</runtime>
+    <set>Star Wars Saga</set>
+    <sorttitle>Star Wars 01</sorttitle>
+    <genre clear="true">SciFi</genre>
+    <genre>Romance</genre>
+    <genre>Action</genre>
+ </movie>
+ http://www.imdb.com/title/tt0076759/

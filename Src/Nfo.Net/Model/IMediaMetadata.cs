@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nfo.Net.Model
 {
-    public interface IMedia
+    public interface IMediaMetadata
     {
     }
 }
