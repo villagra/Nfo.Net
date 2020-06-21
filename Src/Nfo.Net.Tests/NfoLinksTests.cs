@@ -40,6 +40,7 @@ namespace Nfo.Net.Tests
             Assert.AreEqual(filecontent, metadata.Identifiers.First().Url);
         }
 
+        [TestMethod]
         public void NfoReaderTheMovieDbLinks1()
         {
             string filecontent = "https://www.themoviedb.org/movie/210577-gone-girl?language=en-US";
@@ -48,6 +49,30 @@ namespace Nfo.Net.Tests
             Assert.AreEqual(1, metadata.Identifiers.Count);
             Assert.AreEqual("tmdb", metadata.Identifiers.First().Type);
             Assert.AreEqual("210577", metadata.Identifiers.First().Id);
+            Assert.AreEqual(filecontent, metadata.Identifiers.First().Url);
+        }
+
+        [TestMethod]
+        public void NfoReaderTheMovieDbLinks2()
+        {
+            string filecontent = "https://www.themoviedb.org/movie";
+            var metadata = NfoReader.Read(filecontent);
+
+            Assert.AreEqual(1, metadata.Identifiers.Count);
+            Assert.AreEqual("tmdb", metadata.Identifiers.First().Type);
+            Assert.AreEqual(string.Empty, metadata.Identifiers.First().Id);
+            Assert.AreEqual(filecontent, metadata.Identifiers.First().Url);
+        }
+
+        [TestMethod]
+        public void NfoReaderTheMovieDbLinks3()
+        {
+            string filecontent = "https://www.themoviedb.org";
+            var metadata = NfoReader.Read(filecontent);
+
+            Assert.AreEqual(1, metadata.Identifiers.Count);
+            Assert.AreEqual("tmdb", metadata.Identifiers.First().Type);
+            Assert.AreEqual(string.Empty, metadata.Identifiers.First().Id);
             Assert.AreEqual(filecontent, metadata.Identifiers.First().Url);
         }
     }

@@ -73,8 +73,20 @@ namespace Nfo.Net
                     var domainName = domainParser.Get(uriBuilder.Host);
 
                     Identifier id = new Identifier();
-                    id.Type = domainName.Domain;
+                    switch (domainName.Domain)
+                    {
+                        case "themoviedb":
+                            id.Type = "tmdb";
+                            break;
+                        default:
+                            id.Type = domainName.Domain;
+                            break;
+                    }
                     id.Url = uriBuilder.Uri.AbsoluteUri;
+                    if (id.Url.EndsWith("/"))
+                    {
+                        id.Url = id.Url.Substring(0, id.Url.Length - 1);
+                    }
                     id.Id = UrlParser.GetMediaId(uriBuilder.Uri);
 
                     metadata.Identifiers.Add(id);
