@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nfo.Net.Model
 {
-    public class MovieMetadata : IMediaMetadata
+    public class MovieMetadata : MediaMetadata
     {
     }
 }
